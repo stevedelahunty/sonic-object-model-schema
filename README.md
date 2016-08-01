@@ -1,4 +1,4 @@
-SONiC-Base-Model
+SONiC Object Model Schemas
 ================
 The YANG models in this repo define the object model for all of the components in the SONiC NAS host adapter. 
 
@@ -123,6 +123,8 @@ dell-interface.yang
 
 Building
 ========
+Please see the instructions in the sonic-nas-manifest repo for more details on the common build tools.  [Sonic-nas-manifest](https://github.com/Azure/sonic-nas-manifest)
+
 Development Dependencies:
 - sonic-logging
 - sonic-common-utils
