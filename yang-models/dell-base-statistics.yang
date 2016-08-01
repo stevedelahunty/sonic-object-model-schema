@@ -1,0 +1,459 @@
+module dell-base-statistics {
+    namespace "http://www.dell.com/esg/networking/os10/dell-base-statistics";
+    prefix "base-stats";
+
+    import ietf-yang-types {
+        prefix yang;
+    }
+
+    import dell-base-common {
+        prefix "base-cmn";
+    }
+
+    organization
+        "Dell Inc";
+
+    contact
+        "http://www.dell.com/support/softwarecontacts";
+
+    description
+        "This module contains a collection of YANG definitions provided by
+         platform for managing interface statistics";
+
+    revision 2015-10-27 {
+        description
+            "Initial revision";
+    }
+
+    rpc clear {
+        description "Clear Statistics Counters for physical interface";
+        input {
+            leaf ifindex {
+                type  base-cmn:logical-ifindex;
+                mandatory true;
+                description
+                    "Interface index which uniquely identifies
+                     physical interface in the system";
+            }
+        }
+    }
+
+    // @TODO The below items shall be deprecated
+
+    grouping ether-pkts-octets-counter{
+
+    description
+        "Ethernet packet counter attributes in octets";
+
+        leaf pkts-64-octets {
+            description "Number of ethernet packet of 64 octets";
+            type yang:counter64;
+        }
+        leaf pkts-65-to-127-octets {
+            description "Number of ethernet packet of 65 to 127 octets";
+            type yang:counter64;
+        }
+        leaf pkts-128-to-255-octets {
+            description "Number of ethernet packet of 128 to 255 octets";
+            type yang:counter64;
+        }
+        leaf pkts-256-to-511-octets {
+            description " Number of ethernet packet of 256 to 511 octets";
+            type yang:counter64;
+        }
+        leaf pkts-512-to-1023-octets {
+            description "Number of ethernet packet of 512 to 1023 octets";
+            type yang:counter64;
+        }
+        leaf pkts-1024-to-1518-octets {
+            description "Number of ethernet packet of 1024 to 1518 octets";
+            type yang:counter64;
+        }
+        leaf pkts-1519-to-2047-octets {
+            description "Number of ethernet packet of 1519 to 2047 octets";
+            type yang:counter64;
+        }
+        leaf pkts-2048-to-4095-octets {
+            description "Number of ethernet packet of 2047 to 4095 octets";
+            type yang:counter64;
+        }
+        leaf pkts-4096-to-9216-octets {
+            description "Number of ethernet packet of 4096 to 9216 octets";
+            type yang:counter64;
+        }
+        leaf pkts-9217-to-16383-octets {
+            description "Number of ethernet packet of 9217 to 16383 octets";
+            type yang:counter64;
+        }
+     }
+
+     grouping common-pkts-counter{
+
+     description
+        "common counter attributes";
+
+         leaf in-octets {
+            description "Number of incoming octets (bytes)";
+            type yang:counter64;
+        }
+        leaf in-ucast-pkts {
+            description "Number of incoming unicast packets";
+            type yang:counter64;
+        }
+        leaf in-non-ucast-pkts {
+            description "Number of incoming non-unicast packets";
+            type yang:counter64;
+        }
+        leaf in-discards {
+            description "Number of incoming discarded packets";
+            type yang:counter64;
+        }
+        leaf out-octets {
+            description "Number of outgoing octets(bytes)";
+            type yang:counter64;
+        }
+        leaf out-ucast-pkts {
+            description "Number of outgoing unicast packets";
+            type yang:counter64;
+        }
+        leaf out-non-ucast-pkts {
+            description "Number of outgoing non-unicast packets";
+            type yang:counter64;
+        }
+        leaf out-discards {
+            description "Number of outgoing discarded packets";
+            type yang:counter64;
+        }
+    }
+
+     grouping interface-counter-data{
+
+     description
+        "Interface counter attributes";
+
+        container if{
+            description "Interface common packet counters";
+            uses common-pkts-counter;
+        }
+        leaf if-in-errors {
+            description "Number of interface incoming error packets";
+            type yang:counter64;
+        }
+        leaf if-in-unknown-protos {
+            description "Number of interface incoming unknown protocol packets";
+            type yang:counter64;
+        }
+        leaf if-in-broadcast-pkts {
+            description "Number of interface incoming broadcast packets";
+            type yang:counter64;
+        }
+        leaf if-in-multicast-pkts {
+            description "Number of interface incoming multicast packets";
+            type yang:counter64;
+        }
+        leaf if-in-vlan-discards {
+            description "Number of interface incoming vlan discarded packets";
+            type yang:counter64;
+        }
+        leaf if-out-errors {
+            description "Number of interface outgoing error packets";
+            type yang:counter64;
+        }
+        leaf if-out-qlen {
+            description "Number of interface outgoing queue length";
+            type yang:counter64;
+        }
+        leaf if-out-broadcast-pkts {
+            description "Number of interface outgoing broadcast packets";
+            type yang:counter64;
+        }
+        leaf if-out-multicast-pkts {
+            description "Number of interface outgoing multicast packets";
+            type yang:counter64;
+        }
+        leaf ether-drop-events {
+            description "Number of ethernet drop events";
+            type yang:counter64;
+        }
+        leaf ether-multicast-pkts {
+            description "Number of ethernet multicast packets";
+            type yang:counter64;
+        }
+        leaf ether-broadcast-pkts {
+            description "Number of ethernet broadcast packets";
+            type yang:counter64;
+        }
+        leaf ether-undersize-pkts {
+            description "Number of ethernet undersize packets";
+            type yang:counter64;
+        }
+        leaf ether-fragments {
+            description "Number of ethernet fragments";
+            type yang:counter64;
+        }
+        container ether{
+             uses ether-pkts-octets-counter;
+             description "Ethernet packet counters of different size";
+        }
+        leaf ether-oversize-pkts {
+            description "Number of ethernet stats oversize packets";
+            type yang:counter64;
+        }
+        leaf ether-rx-oversize-pkts {
+            description "Number of ethernet received oversize packets";
+            type yang:counter64;
+        }
+        leaf ether-tx-oversize-pkts {
+            description "Number of ethernet transmitted oversize packets";
+            type yang:counter64;
+        }
+        leaf ether-jabbers {
+            description "Number of ethernet stats jabbers";
+            type yang:counter64;
+        }
+        leaf ether-octets {
+            description "Number of ethernet stats octets";
+            type yang:counter64;
+        }
+        leaf ether-pkts {
+            description "Number of ethernet stats packets";
+            type yang:counter64;
+        }
+        leaf ether-collisions {
+            description "Number of ethernet stats collisions";
+            type yang:counter64;
+        }
+        leaf ether-crc-align-errors {
+            description "Number of ethernet stats crc align errors";
+            type yang:counter64;
+        }
+        leaf ether-tx-no-errors {
+            description "Number of ethernet stats tx no errors";
+            type yang:counter64;
+        }
+        leaf ether-rx-no-errors {
+            description "Number of ethernet stats rx no errors";
+            type yang:counter64;
+        }
+        leaf ip-in-receives {
+            description "Number of ip incoming packets";
+            type yang:counter64;
+        }
+        container ip{
+            description "ip common packet counters";
+            uses common-pkts-counter;
+        }
+        leaf ipv6-in-receives {
+            description "Number of ipv6 incoming packets";
+            type yang:counter64;
+        }
+        container ipv6{
+            description "Number of ipv6 common packet counters";
+            uses common-pkts-counter;
+        }
+        leaf ipv6-in-mcast-pkts {
+            description "Number of ipv6 incoming multicast packets";
+            type yang:counter64;
+        }
+        leaf ipv6-out-mcast-pkts {
+            description "Number of ipv6 outgoing multicast packets";
+            type yang:counter64;
+        }
+        leaf green-discard-dropped-packets {
+            description "Number of WRED green packet count";
+            type yang:counter64;
+        }
+        leaf green-discard-dropped-bytes {
+            description "Number of WRED green byte count";
+            type yang:counter64;
+        }
+        leaf yellow-discard-dropped-packets {
+            description "Number of WRED yellow packet count";
+            type yang:counter64;
+        }
+        leaf yellow-discard-dropped-bytes {
+            description "Number of WRED yellow packet count";
+            type yang:counter64;
+        }
+        leaf red-discard-dropped-packets {
+            description "Number of WRED red packet count";
+            type yang:counter64;
+        }
+        leaf red-discard-dropped-bytes {
+            description "Number of WRED red packet count";
+            type yang:counter64;
+        }
+        leaf discard-dropped-packets {
+            description "Number of WRED dropped packet count";
+            type yang:counter64;
+        }
+        leaf discard-dropped-bytes {
+            description "Number of WRED dropped packet bytes";
+            type yang:counter64;
+        }
+        leaf current-occupancy-bytes {
+            description "Current port occupancy in bytes";
+            type yang:counter64;
+        }
+        leaf watermark-bytes {
+            description "port occupancy watermark in bytes";
+            type yang:counter64;
+        }
+        leaf shared-current-occupancy-bytes {
+            description "current port shared occupancy in bytes";
+            type yang:counter64;
+        }
+        leaf shared-watermark-bytes {
+            description "port shared coccupancy watermark in bytes";
+            type yang:counter64;
+        }
+        leaf pause-rx-pkts {
+            description "number of pause frames received on the port";
+            type yang:counter64;
+        }
+        leaf pause-tx-pkts{
+            description "number of pause frames transmitted on the port";
+            type yang:counter64;
+        }
+        leaf pfc-0-rx-pkts{
+            description "PFC 0 RX packet counter";
+            type yang:counter64;
+        }
+        leaf pfc-0-tx-pkts{
+            description "PFC 0 TX packet counter";
+            type yang:counter64;
+        }
+        leaf pfc-1-rx-pkts{
+            description "PFC 1 RX packet counter";
+            type yang:counter64;
+        }
+        leaf pfc-1-tx-pkts{
+            description "PFC 1 TX packet counter";
+            type yang:counter64;
+        }
+        leaf pfc-2-rx-pkts{
+            description "PFC 2 RX packet counter";
+            type yang:counter64;
+        }
+        leaf pfc-2-tx-pkts{
+            description "PFC 2 TX packet counter";
+            type yang:counter64;
+        }
+        leaf pfc-3-rx-pkts{
+            description "PFC 3 RX packet counter";
+            type yang:counter64;
+        }
+        leaf pfc-3-tx-pkts{
+            description "PFC 3 TX packet counter";
+            type yang:counter64;
+        }
+        leaf pfc-4-rx-pkts{
+            description "PFC 4 RX packet counter";
+            type yang:counter64;
+        }
+        leaf pfc-4-tx-pkts{
+            description "PFC 4 TX packet counter";
+            type yang:counter64;
+        }
+        leaf pfc-5-rx-pkts{
+            description "PFC 5 RX packet counter";
+            type yang:counter64;
+        }
+        leaf pfc-5-tx-pkts{
+            description "PFC 5 TX packet counter";
+            type yang:counter64;
+        }
+        leaf pfc-6-rx-pkts{
+            description "PFC 6 RX packet counter";
+            type yang:counter64;
+        }
+        leaf pfc-6-tx-pkts{
+            description "PFC 6 TX packet counter";
+            type yang:counter64;
+        }
+        leaf pfc-7-rx-pkts{
+            description "PFC 7 RX packet counter";
+            type yang:counter64;
+        }
+        leaf pfc-7-tx-pkts{
+            description "PFC 7 TX packet counter";
+            type yang:counter64;
+        }
+
+        container ether-in{
+             uses ether-pkts-octets-counter;
+             description "Number of ingress ethernet packet
+                          counters of different size";
+        }
+        container ether-out{
+             uses ether-pkts-octets-counter;
+             description "Number of egress ethernet packet
+                          counters of different size";
+        }
+    }
+
+    grouping vlan-counter-data{
+        uses common-pkts-counter;
+        leaf in-errors {
+            description "Number of incoming error packets";
+            type yang:counter64;
+        }
+        leaf in-unknown-protos {
+            description "Number of incoming unknown protocol packets";
+            type yang:counter64;
+        }
+        leaf out-errors {
+            description "Number of outgoing error packets";
+            type yang:counter64;
+        }
+        leaf out-qlen {
+            description "Number of outgoing queue length";
+            type yang:counter64;
+        }
+        leaf in-pkts {
+            description "Number of incoming packets";
+            type yang:counter64;
+        }
+        leaf out-pkts {
+            description "Number of outgoing packets";
+            type yang:counter64;
+        }
+    }
+
+    list interface{
+        key "ifindex";
+        description "Interface statistics counter list";
+
+        leaf ifindex{
+            type base-cmn:logical-ifindex;
+            description "Interface index which uniquely identify physical
+                         interface in the system";
+        }
+
+        leaf time-stamp{
+            type yang:timestamp;
+            description "Timestamp at which stats are returned";
+        }
+
+        uses interface-counter-data;
+
+    }
+
+    list vlan{
+        key "ifindex";
+        description "vlan statistics counter list";
+
+        leaf ifindex{
+            type base-cmn:logical-ifindex;
+            description "Interface index which uniquely identify vlan
+                         interface in the system";
+        }
+
+        leaf time-stamp{
+            description "Timestamp at which vlan stat are returned";
+            type yang:timestamp;
+        }
+
+        uses vlan-counter-data;
+    }
+}

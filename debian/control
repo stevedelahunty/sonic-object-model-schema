@@ -1,0 +1,17 @@
+Source: sonic-model
+Section: net
+Priority: optional
+Maintainer: Dell <support@dell.com>
+Build-Depends:
+ debhelper (>=9), dh-autoreconf, libsonic-object-library-dev, sonic-yang-utils-dev
+Standards-Version: 3.9.3
+
+Package: libsonic-model1
+Architecture: any
+Depends: ${shlibs:Depends}, ${misc:Depends}, ${python:Depends}
+Description: SONiC base model - object models for all services
+
+Package: libsonic-model-dev
+Architecture: any
+Depends: ${shlibs:Depends}, ${misc:Depends}, libsonic-model1, libsonic-object-library-dev
+Description: SONiC base model - provides APIs prototype and IDs to access objects

@@ -1,0 +1,196 @@
+module dell-mgmt-interface {
+
+    namespace "http://www.dell.com/esg/networking/os10/dell-mgmt-interface";
+    prefix "mgmt-interface";
+
+    import ietf-yang-types {
+        prefix yang;
+    }
+
+    import dell-base-common {
+        prefix "base-cmn";
+    }
+
+    import dell-base-interface-common {
+        prefix "base-if";
+    }
+
+    organization "Dell Inc";
+
+    contact "http://www.dell.com/support/softwarecontacts";
+
+    description "This module contains a collection of YANG definitions provided by
+                 System Management Interface Service";
+
+    revision 2015-04-03 {
+        description "Initial revision.";
+    }
+
+    list entry {
+        // Instance format: .<slot>.<port>
+        description "Management interface object";
+
+        key "node-id slot port";
+
+        leaf node-id {
+            description "Node Id (Chassis id / stackId)";
+            type uint32;
+        }
+
+        leaf slot {
+            description "Card slot number";
+            type uint32;
+        }
+
+        leaf port {
+            description "Management port number";
+            type uint32;
+        }
+
+        leaf name {
+            description "Management Interface Name";
+            type string;
+            config true;
+        }  	
+
+        leaf if-index {
+            description "Interface Index";
+            type base-cmn:logical-ifindex;
+            config false;
+        }
+
+        leaf mac-address {
+            description "MAC address";
+            type base-cmn:mac-address;
+            config true;
+        }
+
+        leaf ipv4-address {
+            description "IPV4 addresses";
+            type base-cmn:ipv4-address;
+            config true;
+        }
+
+        leaf ipv4-prefix {
+            description "IPV4 prefix";
+            type uint32;
+            config true;
+        }
+
+        leaf ipv6-address {
+            description "IPV6 address";
+            type base-cmn:ipv6-address;
+            config true;
+        }
+
+        leaf ipv6-prefix {
+            description "IPV6 prefix";
+            type uint32;
+            config true;
+        }
+
+        leaf speed {
+            description "Interface speed attribute";
+            type base-if:speed;
+            config true;
+        }
+
+        leaf-list supported-speed {
+            description "Interface supported speed list";
+            type base-if:speed;
+            config false;
+        }
+
+        leaf duplex {
+            description "Interface duplex mode";
+            type base-cmn:duplex-type;
+            config true;
+        }
+
+        leaf autoneg {
+            description "auto negotiation";
+            type boolean;
+            config true;
+        }
+
+        leaf mtu {
+            description "Interface MTU";
+            type uint32;
+            config true;
+        }
+
+        leaf admin-status {
+            description "Administrative status";
+            type base-cmn:admin-status-type;
+            config true;
+        }
+
+        leaf oper-status {
+            description "Operational status";
+            type base-cmn:oper-status-type;
+            config false;
+        }
+
+        // Statistics
+
+        leaf input-packets {
+            description "Number of packets received";
+            type yang:counter64;
+            config false;
+        }
+
+        leaf input-bytes {
+            description "Number of bytes received";
+            type yang:counter64;
+            config false;
+        }
+
+        leaf input-multicast {
+            description "Number of multicast packets received";
+            type yang:counter64;
+            config false;
+        }
+
+        leaf input-errors {
+            description "Number of input errors";
+            type yang:counter64;
+            config false;
+        }
+
+        leaf input-discards {
+            description "Number of input discards";
+            type yang:counter64;
+            config false;
+        }
+
+        leaf output-packets {
+            description "Number of output packets";
+            type yang:counter64;
+            config false;
+        }
+
+        leaf output-bytes {
+            description "Number of output bytes";
+            type yang:counter64;
+            config false;
+        }
+
+        leaf output-multicast {
+            description "Number of output multicast packets";
+            type yang:counter64;
+            config false;
+        }
+
+        leaf output-errors {
+            description "Number of output errors";
+            type yang:counter64;
+            config false;
+        }
+
+        leaf output-invalid-protocol {
+            description "Number of output invalid protocol";
+            type yang:counter64;
+            config false;
+        }
+    }
+}

@@ -1,0 +1,67 @@
+module dell-base-interface {
+    namespace "http://www.dell.com/esg/networking/os10/dell-base-interface";
+    prefix "base-interface";
+
+    import dell-base-common {
+        prefix "base-cmn";
+    }
+
+    organization "Dell Inc";
+
+    contact "http://www.dell.com/support/softwarecontacts";
+
+    description "This model will support interface configuration.
+
+    	***Depreciated****
+
+    	";
+
+    revision 2015-09-11 {
+        description "Initial version.";
+    }
+
+
+    list  entry {
+        key "ifindex";
+        description "This grouping defines generic interface object";
+
+        leaf ifindex {
+            config false;
+            type base-cmn:logical-ifindex;
+            description "index received from kernel for interface";
+        }
+
+		leaf name {
+			config false;
+            type string;
+            description "The name of the interface.  This can also be used as a key
+            		as an alternative to the ifindex field. ";			
+		}
+
+        leaf type {
+            type base-cmn:interface-type;
+            description "The type of the interface.";
+        }
+
+        leaf mtu {
+            type uint32;
+            description "Interface MTU";
+        }
+
+        leaf admin-status {
+            type base-cmn:admin-status-type;
+            description "Interface admin status";
+        }
+
+        leaf oper-status {
+            type base-cmn:oper-status-type;
+            description "Interface Operational status";
+        }
+
+        leaf mac-address{
+            type base-cmn:mac-address;
+            description "The interface mac address. This is a collecition of 6 octects.";
+        }
+
+    }
+}

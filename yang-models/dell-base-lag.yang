@@ -1,0 +1,135 @@
+module dell-base-lag {
+
+    namespace "http://www.dell.com/esg/networking/os10/dell-base-lag";
+    prefix "base-lag";
+
+    import ietf-yang-types {
+        prefix yang;
+    }
+	
+	import dell-base-common {
+        prefix "base-cmn";
+    }
+
+    organization
+        "Dell Inc";
+
+    contact
+        "www.dell.com/support/softwarecontacts";
+
+    description
+        "This module contains a collection of YANG definitions for managing
+        configuration and operational data for Dell LAG functionality";
+
+    revision 2015-03-16 {
+        description "Initial version";
+    }
+
+
+    /*
+     * Configuration of the core elements of the Switch */
+
+	/*possibly remove*/
+    container globals {
+        leaf lag-count {
+            config false;
+            type uint32;
+            description "Current number of lag configured on this device";
+        }
+    }
+
+    list entry {
+        key "ifindex";
+        description "This grouping defines lag interface object";
+
+
+        leaf id {
+            type uint32;
+            description "Lag id from Applications";
+        }
+
+        leaf min-links {
+            type uint32;
+            description "minimum num-of-members per lag";
+        }
+
+        leaf name {
+            type string;
+            description "Name associated with the interface";
+        }
+
+        leaf ifindex {
+            type base-cmn:logical-ifindex;
+            description "index received from kernel for interface";
+        }
+
+        leaf mac-address {
+            config false;
+            type base-cmn:mac-address;
+            description "LAG MAC Address";
+        }
+
+        leaf ip-address {
+            type base-cmn:ip-address;
+            description "IP address associated with the lag";
+        }
+
+        leaf oper-status {
+            type base-cmn:oper-status-type;
+            description "Status of the lag object";
+        }
+
+        leaf admin-status {
+            type base-cmn:admin-status-type;
+            description "Status of the lag object";
+        }
+
+        leaf num-ports {
+            type uint32;
+            description "number of members in the lag interface";
+        }
+
+        leaf lag-opaque-data {
+            config false;
+            type base-cmn:lag-opaque-data;
+            description
+                "NPU LAG opaque data associated with the NOGS base LAG module";
+        }
+
+        leaf lag-mode {
+            description "Mode of lag to be create
+                static lag or dynamic lag";
+            type enumeration {
+                enum STATIC;
+                enum DYNAMIC;
+            }
+        }
+
+        leaf lag-port-state {
+            description "state of member port in lag to hash traffic
+                disable or enable";
+            type enumeration {
+                enum DISABLE;
+                enum ENABLE;
+            }
+        }
+
+        leaf-list block-port-list {
+        	type base-cmn:logical-ifindex;
+            description "Port list to block in NPU";
+        }
+
+        leaf-list unblock-port-list {
+        	type base-cmn:logical-ifindex;
+            description "Port list to unblock in NPU";
+        }
+
+        leaf-list port-list {
+        	type base-cmn:logical-ifindex;
+            description "the port list for this lag";
+        }
+    }
+}
+
+
+
