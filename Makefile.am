@@ -171,238 +171,125 @@ lib_LTLIBRARIES = \
     libcpsclass_dell-base-common.la \
     libcpsclass_dell-base-etl.la
 
+AM_CPPFLAGS = -I@YANG_OUTPUT@ -I$(oldincludedir)/sonic
+AM_CXXFLAGS = -fPIC --std=c++11
+AM_LDFLAGS = -version-info 1:1:0
+
 libcpsclass_yumaworks_extensions_la_SOURCES = @YANG_OUTPUT@/yumaworks-extensions.cpp
-libcpsclass_yumaworks_extensions_la_CPPFLAGS = -I@YANG_OUTPUT@ -I$(oldincludedir)/sonic
-libcpsclass_yumaworks_extensions_la_CXXFLAGS = -fPIC --std=c++11
-libcpsclass_yumaworks_extensions_la_LDFLAGS = -version-info 1:1:0
 libcpsclass_yumaworks_extensions_la_LIBADD = -lsonic_cps_class_map -lsonic_object_library
 
 libcpsclass_yuma_ncx_la_SOURCES = @YANG_OUTPUT@/yuma-ncx.cpp
-libcpsclass_yuma_ncx_la_CPPFLAGS = -I@YANG_OUTPUT@ -I$(oldincludedir)/sonic
-libcpsclass_yuma_ncx_la_CXXFLAGS = -fPIC --std=c++11
-libcpsclass_yuma_ncx_la_LDFLAGS = -version-info 1:1:0
 libcpsclass_yuma_ncx_la_LIBADD = -lsonic_cps_class_map -lsonic_object_library
 
 libcpsclass_ietf_inet_types_la_SOURCES = @YANG_OUTPUT@/ietf-inet-types.cpp
-libcpsclass_ietf_inet_types_la_CPPFLAGS = -I@YANG_OUTPUT@ -I$(oldincludedir)/sonic
-libcpsclass_ietf_inet_types_la_CXXFLAGS = -fPIC --std=c++11
-libcpsclass_ietf_inet_types_la_LDFLAGS = -version-info 1:1:0
 libcpsclass_ietf_inet_types_la_LIBADD = -lsonic_cps_class_map -lsonic_object_library
 
 libcpsclass_ietf_interfaces_la_SOURCES = @YANG_OUTPUT@/ietf-interfaces.cpp
-libcpsclass_ietf_interfaces_la_CPPFLAGS = -I@YANG_OUTPUT@ -I$(oldincludedir)/sonic
-libcpsclass_ietf_interfaces_la_CXXFLAGS = -fPIC --std=c++11
-libcpsclass_ietf_interfaces_la_LDFLAGS = -version-info 1:1:0
 libcpsclass_ietf_interfaces_la_LIBADD = -lsonic_cps_class_map -lsonic_object_library
 
 libcpsclass_ietf_ip_la_SOURCES = @YANG_OUTPUT@/ietf-ip.cpp
-libcpsclass_ietf_ip_la_CPPFLAGS = -I@YANG_OUTPUT@ -I$(oldincludedir)/sonic
-libcpsclass_ietf_ip_la_CXXFLAGS = -fPIC --std=c++11
-libcpsclass_ietf_ip_la_LDFLAGS = -version-info 1:1:0
 libcpsclass_ietf_ip_la_LIBADD = -lsonic_cps_class_map -lsonic_object_library
 
 libcpsclass_iana_if_type_la_SOURCES = @YANG_OUTPUT@/iana-if-type.cpp
-libcpsclass_iana_if_type_la_CPPFLAGS = -I@YANG_OUTPUT@ -I$(oldincludedir)/sonic
-libcpsclass_iana_if_type_la_CXXFLAGS = -fPIC --std=c++11
-libcpsclass_iana_if_type_la_LDFLAGS = -version-info 1:1:0
 libcpsclass_iana_if_type_la_LIBADD = -lsonic_cps_class_map -lsonic_object_library
 
 libcpsclass_dell_yang_types_la_SOURCES = @YANG_OUTPUT@/dell-yang-types.cpp
-libcpsclass_dell_yang_types_la_CPPFLAGS = -I@YANG_OUTPUT@ -I$(oldincludedir)/sonic
-libcpsclass_dell_yang_types_la_CXXFLAGS = -fPIC --std=c++11
-libcpsclass_dell_yang_types_la_LDFLAGS = -version-info 1:1:0
 libcpsclass_dell_yang_types_la_LIBADD = -lsonic_cps_class_map -lsonic_object_library
 
 libcpsclass_dell_extensions_la_SOURCES = @YANG_OUTPUT@/dell-extensions.cpp
-libcpsclass_dell_extensions_la_CPPFLAGS = -I@YANG_OUTPUT@ -I$(oldincludedir)/sonic
-libcpsclass_dell_extensions_la_CXXFLAGS = -fPIC --std=c++11
-libcpsclass_dell_extensions_la_LDFLAGS = -version-info 1:1:0
 libcpsclass_dell_extensions_la_LIBADD = -lsonic_cps_class_map -lsonic_object_library
 
 libcpsclass_dell_base_etl_common_la_SOURCES = @YANG_OUTPUT@/dell-base-etl-common.cpp
-libcpsclass_dell_base_etl_common_la_CPPFLAGS = -I@YANG_OUTPUT@ -I$(oldincludedir)/sonic
-libcpsclass_dell_base_etl_common_la_CXXFLAGS = -fPIC --std=c++11
-libcpsclass_dell_base_etl_common_la_LDFLAGS = -version-info 1:1:0
 libcpsclass_dell_base_etl_common_la_LIBADD = -lsonic_cps_class_map -lsonic_object_library
 
 libcpsclass_dell_base_routing_la_SOURCES = @YANG_OUTPUT@/dell-base-routing.cpp
-libcpsclass_dell_base_routing_la_CPPFLAGS = -I@YANG_OUTPUT@ -I$(oldincludedir)/sonic
-libcpsclass_dell_base_routing_la_CXXFLAGS = -fPIC --std=c++11
-libcpsclass_dell_base_routing_la_LDFLAGS = -version-info 1:1:0
 libcpsclass_dell_base_routing_la_LIBADD = -lsonic_cps_class_map -lsonic_object_library
 
 libcpsclass_dell_base_acl_la_SOURCES = @YANG_OUTPUT@/dell-base-acl.cpp
-libcpsclass_dell_base_acl_la_CPPFLAGS = -I@YANG_OUTPUT@ -I$(oldincludedir)/sonic
-libcpsclass_dell_base_acl_la_CXXFLAGS = -fPIC --std=c++11
-libcpsclass_dell_base_acl_la_LDFLAGS = -version-info 1:1:0
 libcpsclass_dell_base_acl_la_LIBADD = -lsonic_cps_class_map -lsonic_object_library
 
 libcpsclass_dell_base_pas_la_SOURCES = @YANG_OUTPUT@/dell-base-pas.cpp
-libcpsclass_dell_base_pas_la_CPPFLAGS = -I@YANG_OUTPUT@ -I$(oldincludedir)/sonic
-libcpsclass_dell_base_pas_la_CXXFLAGS = -fPIC --std=c++11
-libcpsclass_dell_base_pas_la_LDFLAGS = -version-info 1:1:0
 libcpsclass_dell_base_pas_la_LIBADD = -lsonic_cps_class_map -lsonic_object_library
 
 libcpsclass_dell_base_if_mgmt_la_SOURCES = @YANG_OUTPUT@/dell-base-if-mgmt.cpp
-libcpsclass_dell_base_if_mgmt_la_CPPFLAGS = -I@YANG_OUTPUT@ -I$(oldincludedir)/sonic
-libcpsclass_dell_base_if_mgmt_la_CXXFLAGS = -fPIC --std=c++11
-libcpsclass_dell_base_if_mgmt_la_LDFLAGS = -version-info 1:1:0
 libcpsclass_dell_base_if_mgmt_la_LIBADD = -lsonic_cps_class_map -lsonic_object_library
 
 libcpsclass_dell_base_if_linux_la_SOURCES = @YANG_OUTPUT@/dell-base-if-linux.cpp
-libcpsclass_dell_base_if_linux_la_CPPFLAGS = -I@YANG_OUTPUT@ -I$(oldincludedir)/sonic
-libcpsclass_dell_base_if_linux_la_CXXFLAGS = -fPIC --std=c++11
-libcpsclass_dell_base_if_linux_la_LDFLAGS = -version-info 1:1:0
 libcpsclass_dell_base_if_linux_la_LIBADD = -lsonic_cps_class_map -lsonic_object_library
 
 libcpsclass_dell_base_interface_la_SOURCES = @YANG_OUTPUT@/dell-base-interface.cpp
-libcpsclass_dell_base_interface_la_CPPFLAGS = -I@YANG_OUTPUT@ -I$(oldincludedir)/sonic
-libcpsclass_dell_base_interface_la_CXXFLAGS = -fPIC --std=c++11
-libcpsclass_dell_base_interface_la_LDFLAGS = -version-info 1:1:0
 libcpsclass_dell_base_interface_la_LIBADD = -lsonic_cps_class_map -lsonic_object_library
 
 libcpsclass_dell_base_media_la_SOURCES = @YANG_OUTPUT@/dell-base-media.cpp
-libcpsclass_dell_base_media_la_CPPFLAGS = -I@YANG_OUTPUT@ -I$(oldincludedir)/sonic
-libcpsclass_dell_base_media_la_CXXFLAGS = -fPIC --std=c++11
-libcpsclass_dell_base_media_la_LDFLAGS = -version-info 1:1:0
 libcpsclass_dell_base_media_la_LIBADD = -lsonic_cps_class_map -lsonic_object_library
 
 libcpsclass_dell_base_vlan_la_SOURCES = @YANG_OUTPUT@/dell-base-vlan.cpp
-libcpsclass_dell_base_vlan_la_CPPFLAGS = -I@YANG_OUTPUT@ -I$(oldincludedir)/sonic
-libcpsclass_dell_base_vlan_la_CXXFLAGS = -fPIC --std=c++11
-libcpsclass_dell_base_vlan_la_LDFLAGS = -version-info 1:1:0
 libcpsclass_dell_base_vlan_la_LIBADD = -lsonic_cps_class_map -lsonic_object_library
 
 libcpsclass_dell_base_if_vlan_la_SOURCES = @YANG_OUTPUT@/dell-base-if-vlan.cpp
-libcpsclass_dell_base_if_vlan_la_CPPFLAGS = -I@YANG_OUTPUT@ -I$(oldincludedir)/sonic
-libcpsclass_dell_base_if_vlan_la_CXXFLAGS = -fPIC --std=c++11
-libcpsclass_dell_base_if_vlan_la_LDFLAGS = -version-info 1:1:0
 libcpsclass_dell_base_if_vlan_la_LIBADD = -lsonic_cps_class_map -lsonic_object_library
 
 libcpsclass_dell_base_stg_la_SOURCES = @YANG_OUTPUT@/dell-base-stg.cpp
-libcpsclass_dell_base_stg_la_CPPFLAGS = -I@YANG_OUTPUT@ -I$(oldincludedir)/sonic
-libcpsclass_dell_base_stg_la_CXXFLAGS = -fPIC --std=c++11
-libcpsclass_dell_base_stg_la_LDFLAGS = -version-info 1:1:0
 libcpsclass_dell_base_stg_la_LIBADD = -lsonic_cps_class_map -lsonic_object_library
 
 libcpsclass_dell_base_platform_common_la_SOURCES = @YANG_OUTPUT@/dell-base-platform-common.cpp
-libcpsclass_dell_base_platform_common_la_CPPFLAGS = -I@YANG_OUTPUT@ -I$(oldincludedir)/sonic
-libcpsclass_dell_base_platform_common_la_CXXFLAGS = -fPIC --std=c++11
-libcpsclass_dell_base_platform_common_la_LDFLAGS = -version-info 1:1:0
 libcpsclass_dell_base_platform_common_la_LIBADD = -lsonic_cps_class_map -lsonic_object_library
 
 libcpsclass_dell_interface_la_SOURCES = @YANG_OUTPUT@/dell-interface.cpp
-libcpsclass_dell_interface_la_CPPFLAGS = -I@YANG_OUTPUT@ -I$(oldincludedir)/sonic
-libcpsclass_dell_interface_la_CXXFLAGS = -fPIC --std=c++11
-libcpsclass_dell_interface_la_LDFLAGS = -version-info 1:1:0
 libcpsclass_dell_interface_la_LIBADD = -lsonic_cps_class_map -lsonic_object_library
 
 libcpsclass_dell_base_if_la_SOURCES = @YANG_OUTPUT@/dell-base-if.cpp
-libcpsclass_dell_base_if_la_CPPFLAGS = -I@YANG_OUTPUT@ -I$(oldincludedir)/sonic
-libcpsclass_dell_base_if_la_CXXFLAGS = -fPIC --std=c++11
-libcpsclass_dell_base_if_la_LDFLAGS = -version-info 1:1:0
 libcpsclass_dell_base_if_la_LIBADD = -lsonic_cps_class_map -lsonic_object_library
 
 libcpsclass_dell_base_sflow_la_SOURCES = @YANG_OUTPUT@/dell-base-sflow.cpp
-libcpsclass_dell_base_sflow_la_CPPFLAGS = -I@YANG_OUTPUT@ -I$(oldincludedir)/sonic
-libcpsclass_dell_base_sflow_la_CXXFLAGS = -fPIC --std=c++11
-libcpsclass_dell_base_sflow_la_LDFLAGS = -version-info 1:1:0
 libcpsclass_dell_base_sflow_la_LIBADD = -lsonic_cps_class_map -lsonic_object_library
 
 libcpsclass_dell_base_switch_element_la_SOURCES = @YANG_OUTPUT@/dell-base-switch-element.cpp
-libcpsclass_dell_base_switch_element_la_CPPFLAGS = -I@YANG_OUTPUT@ -I$(oldincludedir)/sonic
-libcpsclass_dell_base_switch_element_la_CXXFLAGS = -fPIC --std=c++11
-libcpsclass_dell_base_switch_element_la_LDFLAGS = -version-info 1:1:0
 libcpsclass_dell_base_switch_element_la_LIBADD = -lsonic_cps_class_map -lsonic_object_library
 
 libcpsclass_dell_base_mirror_la_SOURCES = @YANG_OUTPUT@/dell-base-mirror.cpp
-libcpsclass_dell_base_mirror_la_CPPFLAGS = -I@YANG_OUTPUT@ -I$(oldincludedir)/sonic
-libcpsclass_dell_base_mirror_la_CXXFLAGS = -fPIC --std=c++11
-libcpsclass_dell_base_mirror_la_LDFLAGS = -version-info 1:1:0
 libcpsclass_dell_base_mirror_la_LIBADD = -lsonic_cps_class_map -lsonic_object_library
 
 libcpsclass_dell_base_if_lag_la_SOURCES = @YANG_OUTPUT@/dell-base-if-lag.cpp
-libcpsclass_dell_base_if_lag_la_CPPFLAGS = -I@YANG_OUTPUT@ -I$(oldincludedir)/sonic
-libcpsclass_dell_base_if_lag_la_CXXFLAGS = -fPIC --std=c++11
-libcpsclass_dell_base_if_lag_la_LDFLAGS = -version-info 1:1:0
 libcpsclass_dell_base_if_lag_la_LIBADD = -lsonic_cps_class_map -lsonic_object_library
 
 libcpsclass_dell_base_packet_la_SOURCES = @YANG_OUTPUT@/dell-base-packet.cpp
-libcpsclass_dell_base_packet_la_CPPFLAGS = -I@YANG_OUTPUT@ -I$(oldincludedir)/sonic
-libcpsclass_dell_base_packet_la_CXXFLAGS = -fPIC --std=c++11
-libcpsclass_dell_base_packet_la_LDFLAGS = -version-info 1:1:0
 libcpsclass_dell_base_packet_la_LIBADD = -lsonic_cps_class_map -lsonic_object_library
 
 libcpsclass_dell_base_interface_common_la_SOURCES = @YANG_OUTPUT@/dell-base-interface-common.cpp
-libcpsclass_dell_base_interface_common_la_CPPFLAGS = -I@YANG_OUTPUT@ -I$(oldincludedir)/sonic
-libcpsclass_dell_base_interface_common_la_CXXFLAGS = -fPIC --std=c++11
-libcpsclass_dell_base_interface_common_la_LDFLAGS = -version-info 1:1:0
 libcpsclass_dell_base_interface_common_la_LIBADD = -lsonic_cps_class_map -lsonic_object_library
 
 libcpsclass_dell_base_ip_la_SOURCES = @YANG_OUTPUT@/dell-base-ip.cpp
-libcpsclass_dell_base_ip_la_CPPFLAGS = -I@YANG_OUTPUT@ -I$(oldincludedir)/sonic
-libcpsclass_dell_base_ip_la_CXXFLAGS = -fPIC --std=c++11
-libcpsclass_dell_base_ip_la_LDFLAGS = -version-info 1:1:0
 libcpsclass_dell_base_ip_la_LIBADD = -lsonic_cps_class_map -lsonic_object_library
 
 libcpsclass_dell_base_qos_la_SOURCES = @YANG_OUTPUT@/dell-base-qos.cpp
-libcpsclass_dell_base_qos_la_CPPFLAGS = -I@YANG_OUTPUT@ -I$(oldincludedir)/sonic
-libcpsclass_dell_base_qos_la_CXXFLAGS = -fPIC --std=c++11
-libcpsclass_dell_base_qos_la_LDFLAGS = -version-info 1:1:0
 libcpsclass_dell_base_qos_la_LIBADD = -lsonic_cps_class_map -lsonic_object_library
 
 libcpsclass_dell_base_l2_mac_la_SOURCES = @YANG_OUTPUT@/dell-base-l2-mac.cpp
-libcpsclass_dell_base_l2_mac_la_CPPFLAGS = -I@YANG_OUTPUT@ -I$(oldincludedir)/sonic
-libcpsclass_dell_base_l2_mac_la_CXXFLAGS = -fPIC --std=c++11
-libcpsclass_dell_base_l2_mac_la_LDFLAGS = -version-info 1:1:0
 libcpsclass_dell_base_l2_mac_la_LIBADD = -lsonic_cps_class_map -lsonic_object_library
 
 libcpsclass_dell_base_if_phy_la_SOURCES = @YANG_OUTPUT@/dell-base-if-phy.cpp
-libcpsclass_dell_base_if_phy_la_CPPFLAGS = -I@YANG_OUTPUT@ -I$(oldincludedir)/sonic
-libcpsclass_dell_base_if_phy_la_CXXFLAGS = -fPIC --std=c++11
-libcpsclass_dell_base_if_phy_la_LDFLAGS = -version-info 1:1:0
 libcpsclass_dell_base_if_phy_la_LIBADD = -lsonic_cps_class_map -lsonic_object_library
 
 libcpsclass_dell_base_env_tempctl_la_SOURCES = @YANG_OUTPUT@/dell-base-env-tempctl.cpp
-libcpsclass_dell_base_env_tempctl_la_CPPFLAGS = -I@YANG_OUTPUT@ -I$(oldincludedir)/sonic
-libcpsclass_dell_base_env_tempctl_la_CXXFLAGS = -fPIC --std=c++11
-libcpsclass_dell_base_env_tempctl_la_LDFLAGS = -version-info 1:1:0
 libcpsclass_dell_base_env_tempctl_la_LIBADD = -lsonic_cps_class_map -lsonic_object_library
 
 libcpsclass_dell_base_lag_la_SOURCES = @YANG_OUTPUT@/dell-base-lag.cpp
-libcpsclass_dell_base_lag_la_CPPFLAGS = -I@YANG_OUTPUT@ -I$(oldincludedir)/sonic
-libcpsclass_dell_base_lag_la_CXXFLAGS = -fPIC --std=c++11
-libcpsclass_dell_base_lag_la_LDFLAGS = -version-info 1:1:0
 libcpsclass_dell_base_lag_la_LIBADD = -lsonic_cps_class_map -lsonic_object_library
 
 libcpsclass_dell_base_statistics_la_SOURCES = @YANG_OUTPUT@/dell-base-statistics.cpp
-libcpsclass_dell_base_statistics_la_CPPFLAGS = -I@YANG_OUTPUT@ -I$(oldincludedir)/sonic
-libcpsclass_dell_base_statistics_la_CXXFLAGS = -fPIC --std=c++11
-libcpsclass_dell_base_statistics_la_LDFLAGS = -version-info 1:1:0
 libcpsclass_dell_base_statistics_la_LIBADD = -lsonic_cps_class_map -lsonic_object_library
 
 libcpsclass_dell_base_phy_interface_la_SOURCES = @YANG_OUTPUT@/dell-base-phy-interface.cpp
-libcpsclass_dell_base_phy_interface_la_CPPFLAGS = -I@YANG_OUTPUT@ -I$(oldincludedir)/sonic
-libcpsclass_dell_base_phy_interface_la_CXXFLAGS = -fPIC --std=c++11
-libcpsclass_dell_base_phy_interface_la_LDFLAGS = -version-info 1:1:0
 libcpsclass_dell_base_phy_interface_la_LIBADD = -lsonic_cps_class_map -lsonic_object_library
 
 libcpsclass_dell_base_mgmt_interface_la_SOURCES = @YANG_OUTPUT@/dell-base-mgmt-interface.cpp
-libcpsclass_dell_base_mgmt_interface_la_CPPFLAGS = -I@YANG_OUTPUT@ -I$(oldincludedir)/sonic
-libcpsclass_dell_base_mgmt_interface_la_CXXFLAGS = -fPIC --std=c++11
-libcpsclass_dell_base_mgmt_interface_la_LDFLAGS = -version-info 1:1:0
 libcpsclass_dell_base_mgmt_interface_la_LIBADD = -lsonic_cps_class_map -lsonic_object_library
 
 libcpsclass_dell_base_common_la_SOURCES = @YANG_OUTPUT@/dell-base-common.cpp
-libcpsclass_dell_base_common_la_CPPFLAGS = -I@YANG_OUTPUT@ -I$(oldincludedir)/sonic
-libcpsclass_dell_base_common_la_CXXFLAGS = -fPIC --std=c++11
-libcpsclass_dell_base_common_la_LDFLAGS = -version-info 1:1:0
 libcpsclass_dell_base_common_la_LIBADD = -lsonic_cps_class_map -lsonic_object_library
 
 libcpsclass_dell_base_etl_la_SOURCES = @YANG_OUTPUT@/dell-base-etl.cpp
-libcpsclass_dell_base_etl_la_CPPFLAGS = -I@YANG_OUTPUT@ -I$(oldincludedir)/sonic
-libcpsclass_dell_base_etl_la_CXXFLAGS = -fPIC --std=c++11
-libcpsclass_dell_base_etl_la_LDFLAGS = -version-info 1:1:0
 libcpsclass_dell_base_etl_la_LIBADD = -lsonic_cps_class_map -lsonic_object_library
 
 
