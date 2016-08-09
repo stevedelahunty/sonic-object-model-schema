@@ -1,10 +1,12 @@
-Source: sonic-model
+Source: sonic-object-model-schema
 Section: net
 Priority: optional
 Maintainer: Dell <support@dell.com>
 Build-Depends:
  debhelper (>=9), dh-autoreconf, libsonic-object-library-dev, sonic-yang-utils-dev
 Standards-Version: 3.9.3
+Vcs-Browser: https://github.com/Azure/sonic-object-model-schema
+Vcs-Git: https://github.com/Azure/sonic-object-model-schema.git
 
 Package: libsonic-model1
 Architecture: any
