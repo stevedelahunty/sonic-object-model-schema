@@ -4,7 +4,7 @@ The YANG models in this repo define the object model for all of the components i
 
 Model Overview
 --------------
-Applications/scripts can use existing and build new models for behaviour on the system.
+Applications/scripts can use existing and build new models for behavior on the system.
 Read the Application Programming Guide for more information on the CPS interfaces.
 
 Generally each YANG model is contained in a YANG prefix.  In this prefix are all of the classes, types, enums, etc are defined.
@@ -26,7 +26,7 @@ libsonic-model1 - model meta data in compiled format
 
 After installing the libsonic-model-dev, the header files will be stored in the /usr/include/sonic folder (unless you change the prefix).
 
-The library metadata files will be stored in the usr/lib/x86_64-linux-gnu/ directory (assuming defualt debian 64-bit build)
+The library metadata files will be stored in the usr/lib/x86_64-linux-gnu/ directory (assuming default debian 64-bit build)
 
 You can see the metadata from Python using the cps.type API or the cps.info API or one of the many other python extension APIs.
 
@@ -35,7 +35,7 @@ Adding a New Model
 To add a new model to the system, add a model file into the yang-model directory you need to:
 1) Create a new YANG model (extension should be .yang)
 2) Copy the YANG model into the yang-model directory
-3) Update the Makefile.in with the approprate model
+3) Update the Makefile.in with the appropriate model
 4) Run a build
 
 
@@ -58,7 +58,7 @@ The class we want to use in this example is "entity".
 Therefor the key for the entity class (within the dell-base-pas.yang) is base-pas/entity
 
 
-Networking Exmaple
+Networking Example
 ------------------
 For example, lets say that an application needs to get the LAG interfaces via script (ignoring that the LAG can be queried through the Linux bonding commands).  The interface class that holds the LAG information is in the the dell-base-if.yang file.
 
@@ -68,9 +68,9 @@ Prefix in the file is dell-base-if-cmn.
 
 Since the mode is an augment, normally you would communicate using the key from the augmented object which is in this case if/interfaces/interface.
 
-But looking at the details in the YANG model (decription) itself (in dell-base-if.yang), the documentation states that access to the class can be through the dell-base-if-cmn/if/interfaces/interface model.
+But looking at the details in the YANG model (description) itself (in dell-base-if.yang), the documentation states that access to the class can be through the dell-base-if-cmn/if/interfaces/interface model.
 
-Therefore from a CPS perspsective, you can use the key "dell-base-if-cmn/if/interfaces/interface".
+Therefore from a CPS perspective, you can use the key "dell-base-if-cmn/if/interfaces/interface".
 
 But it also states that to do a query of lags, you need to specify the ietf interface type.
 
