@@ -296,7 +296,7 @@ libcpsclass_dell_base_etl_la_LIBADD = -lsonic_cps_class_map -lsonic_object_libra
 @YANG_OUTPUT@/%.h @YANG_OUTPUT@/%.cpp: %.yang
 	@ rm -f @YANG_OUTPUT@/$*.cpp
 	@ rm -f @YANG_OUTPUT@/$*.h
-	YANG_PATH=${YANG_DIRS} /usr/lib/sonic/ar_parse_yang.sh $< @YANG_OUTPUT@ @YANG_OUTPUT@
+	YANG_PATH=${YANG_DIRS} $(SNAPCRAFT_STAGE)/usr/lib/sonic/ar_parse_yang.sh $< @YANG_OUTPUT@ @YANG_OUTPUT@
 
 clean-local:
 	@(  if [ -d @YANG_OUTPUT@ ] ; then  \
